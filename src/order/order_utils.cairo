@@ -163,92 +163,63 @@ fn create_order( //TODO and fix when fee_token is implememted
 /// # Arguments
 /// * `params` - The parameters used to execute the order.
 fn execute_order(params: ExecuteOrderParams) {
-    // 63/64 gas is forwarded to external calls, reduce the startingGas to account for this
-    // TODO GAS NOT AVAILABLE params.startingGas -= gasleft() / 63;
-    params.contracts.data_store.remove_order(params.key, params.order.account);
+    // // 63/64 gas is forwarded to external calls, reduce the startingGas to account for this
+    // // TODO GAS NOT AVAILABLE params.startingGas -= gasleft() / 63;
+    // params.contracts.data_store.remove_order(params.key, params.order.account);
 
-    '5. Execute Order'.print();
+    // base_order_utils::validate_non_empty_order(@params.order);
 
-    let balance_ETH_start = IERC20Dispatcher { contract_address: contract_address_const::<'ETH'>() }
-        .balance_of(contract_address_const::<'caller'>());
+    // base_order_utils::validate_order_trigger_price(
+    //     params.contracts.oracle,
+    //     params.market.index_token,
+    //     params.order.order_type,
+    //     params.order.trigger_price,
+    //     params.order.is_long
+    // );
+    // let params_process = ExecuteOrderParams {
+    //     contracts: params.contracts,
+    //     key: params.key,
+    //     order: params.order,
+    //     swap_path_markets: params.swap_path_markets.clone(),
+    //     min_oracle_block_numbers: params.min_oracle_block_numbers.clone(),
+    //     max_oracle_block_numbers: params.max_oracle_block_numbers.clone(),
+    //     market: params.market,
+    //     keeper: params.keeper,
+    //     starting_gas: params.starting_gas,
+    //     secondary_order_type: params.secondary_order_type
+    // };
 
-    let balance_USDC_start = IERC20Dispatcher {
-        contract_address: contract_address_const::<'USDC'>()
-    }
-        .balance_of(contract_address_const::<'caller'>());
+    // let mut event_data: LogData = process_order(params_process);
+    // // validate that internal state changes are correct before calling
+    // // external callbacks
+    // // if the native token was transferred to the receiver in a swap
+    // // it may be possible to invoke external contracts before the validations
+    // // are called
 
-    '5. eth start create order'.print();
-    balance_ETH_start.print();
+    // if (params.market.market_token != contract_address_const::<0>()) {
+    //     market_utils::validate_market_token_balance_check(
+    //         params.contracts.data_store, params.market
+    //     );
+    // }
+    // market_utils::validate_market_token_balance_array(
+    //     params.contracts.data_store, params.swap_path_markets
+    // );
 
-    '5. usdc start create order'.print();
-    balance_USDC_start.print();
+    // params.contracts.event_emitter.emit_order_executed(params.key, params.secondary_order_type);
+    // // callback_utils::after_order_execution(params.key, params.order, event_data);
 
-    base_order_utils::validate_non_empty_order(@params.order);
-
-    base_order_utils::validate_order_trigger_price(
-        params.contracts.oracle,
-        params.market.index_token,
-        params.order.order_type,
-        params.order.trigger_price,
-        params.order.is_long
-    );
-    'passed validations'.print();
-    let params_process = ExecuteOrderParams {
-        contracts: params.contracts,
-        key: params.key,
-        order: params.order,
-        swap_path_markets: params.swap_path_markets.clone(),
-        min_oracle_block_numbers: params.min_oracle_block_numbers.clone(),
-        max_oracle_block_numbers: params.max_oracle_block_numbers.clone(),
-        market: params.market,
-        keeper: params.keeper,
-        starting_gas: params.starting_gas,
-        secondary_order_type: params.secondary_order_type
-    };
-
-    let mut event_data: LogData = process_order(params_process);
-    // validate that internal state changes are correct before calling
-    // external callbacks
-    // if the native token was transferred to the receiver in a swap
-    // it may be possible to invoke external contracts before the validations
-    // are called
-
-    let balance_ETH_after = IERC20Dispatcher { contract_address: contract_address_const::<'ETH'>() }
-        .balance_of(contract_address_const::<'caller'>());
-    'balance_ETH_after'.print();
-    balance_ETH_after.print();
-
-    let balance_USDC_after = IERC20Dispatcher {
-        contract_address: contract_address_const::<'USDC'>()
-    }
-        .balance_of(contract_address_const::<'caller'>());
-    'balance_USDC_after'.print();
-    balance_USDC_after.print();
-
-    if (params.market.market_token != contract_address_const::<0>()) {
-        market_utils::validate_market_token_balance_check(
-            params.contracts.data_store, params.market
-        );
-    }
-    market_utils::validate_market_token_balance_array(
-        params.contracts.data_store, params.swap_path_markets
-    );
-
-    params.contracts.event_emitter.emit_order_executed(params.key, params.secondary_order_type);
-// callback_utils::after_order_execution(params.key, params.order, event_data);
-
-// the order.executionFee for liquidation / adl orders is zero
-// gas costs for liquidations / adl is subsidised by the treasury
-// TODO crashing
-// gas_utils::pay_execution_fee_order(
-//     params.contracts.data_store,
-//     params.contracts.event_emitter,
-//     params.contracts.order_vault,
-//     params.order.execution_fee,
-//     params.starting_gas,
-//     params.keeper,
-//     params.order.account
-// );
+    // // the order.executionFee for liquidation / adl orders is zero
+    // // gas costs for liquidations / adl is subsidised by the treasury
+    // // TODO crashing
+    // // gas_utils::pay_execution_fee_order(
+    // //     params.contracts.data_store,
+    // //     params.contracts.event_emitter,
+    // //     params.contracts.order_vault,
+    // //     params.order.execution_fee,
+    // //     params.starting_gas,
+    // //     params.keeper,
+    // //     params.order.account
+    // // );
 }
 
 /// Process an order execution.

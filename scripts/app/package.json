@@ -1,0 +1,19 @@
+{
+	"dependencies": {
+		"dotenv": "^16.4.5",
+		"fs": "^0.0.1-security",
+		"starknet": "6.1.5",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.3.3"
+	},
+	"devDependencies": {
+		"@types/node": "^20.11.19"
+	},
+	"scripts": {
+		"deploy-app": "ts-node ./deployApp.ts",
+		"deploy-liquidation-handler": "scarb build && ts-node ./deploy-liquidation-handler.ts",
+		"deploy-order-handler": "scarb build && ts-node ./deploy-order-handler.ts",
+		"compiletestdeploy": "snforge test && ts-node ./deploy.ts"
+	},
+	"license": "MIT"
+}

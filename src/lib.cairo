@@ -73,6 +73,10 @@ mod exchange {
     mod liquidation_handler;
     mod order_handler;
     mod withdrawal_handler;
+    mod create_order_handler;
+    mod update_order_handler;
+    mod cancel_order_handler;
+    mod execute_order_handler;
 }
 
 // `feature` is used to validate if a feature is enabled or disabled.
