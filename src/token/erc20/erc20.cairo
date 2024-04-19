@@ -72,7 +72,11 @@ mod ERC20 {
             self._total_supply.read()
         }
 
-        fn balance_of(self: @ContractState, account: ContractAddress) -> u256 {
+        fn balanceOf(self: @ContractState, account: ContractAddress) -> u256 {
+            self._balances.read(account)
+        }
+
+             fn balance_of(self: @ContractState, account: ContractAddress) -> u256 {
             self._balances.read(account)
         }
 
@@ -84,6 +88,18 @@ mod ERC20 {
 
         fn transfer(ref self: ContractState, recipient: ContractAddress, amount: u256) -> bool {
             let sender = get_caller_address();
+            self._transfer(sender, recipient, amount);
+            true
+        }
+
+        fn transferFrom(
+            ref self: ContractState,
+            sender: ContractAddress,
+            recipient: ContractAddress,
+            amount: u256
+        ) -> bool {
+            let caller = get_caller_address();
+            self._spend_allowance(sender, caller, amount);
             self._transfer(sender, recipient, amount);
             true
         }

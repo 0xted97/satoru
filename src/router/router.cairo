@@ -48,6 +48,9 @@ mod Router {
     use satoru::router::error::RouterError;
     use satoru::token::erc20::interface::{IERC20Dispatcher, IERC20DispatcherTrait};
 
+    // Openzepplin import 
+    use openzeppelin::token::erc20::dual20::{DualCaseERC20, DualCaseERC20Trait};
+
     // *************************************************************************
     //                              STORAGE
     // *************************************************************************
@@ -86,8 +89,8 @@ mod Router {
 
             // Transfer tokens from account to receiver.
             // It requires that account's allowance to this contract is at least `amount`.
-            IERC20Dispatcher { contract_address: token }
-                .transfer_from(account, receiver, amount.into());
+            let token = IERC20Dispatcher { contract_address: token };
+            token.transferFrom(account, receiver, amount.into());
         }
     }
 }

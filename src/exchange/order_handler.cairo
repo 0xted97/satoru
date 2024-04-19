@@ -198,23 +198,23 @@ mod OrderHandler {
         fn create_order(
             ref self: ContractState, account: ContractAddress, params: CreateOrderParams
         ) -> felt252 {
-            '3. Create order'.print();
+            // '3. Create order'.print();
 
-            let balance_ETH_start = IERC20Dispatcher {
-                contract_address: contract_address_const::<'ETH'>()
-            }
-                .balance_of(contract_address_const::<'caller'>());
+            // let balance_ETH_start = IERC20Dispatcher {
+            //     contract_address: contract_address_const::<'ETH'>()
+            // }
+            //     .balance_of(contract_address_const::<'caller'>());
 
-            let balance_USDC_start = IERC20Dispatcher {
-                contract_address: contract_address_const::<'USDC'>()
-            }
-                .balance_of(contract_address_const::<'caller'>());
+            // let balance_USDC_start = IERC20Dispatcher {
+            //     contract_address: contract_address_const::<'USDC'>()
+            // }
+            //     .balance_of(contract_address_const::<'caller'>());
 
-            '3. eth start 0 create order'.print();
-            balance_ETH_start.print();
+            // '3. eth start 0 create order'.print();
+            // balance_ETH_start.print();
 
-            '3. usdc start 0 create order'.print();
-            balance_USDC_start.print();
+            // '3. usdc start 0 create order'.print();
+            // balance_USDC_start.print();
             // Check only controller.
             let role_module_state = RoleModule::unsafe_new_contract_state();
             role_module_state.only_controller();

@@ -1,0 +1,6045 @@
+[
+  {
+    "type": "impl",
+    "name": "EventEmitterImpl",
+    "interface_name": "satoru::event::event_emitter::IEventEmitter"
+  },
+  {
+    "type": "struct",
+    "name": "core::integer::u256",
+    "members": [
+      {
+        "name": "low",
+        "type": "core::integer::u128"
+      },
+      {
+        "name": "high",
+        "type": "core::integer::u128"
+      }
+    ]
+  },
+  {
+    "type": "enum",
+    "name": "core::bool",
+    "variants": [
+      {
+        "name": "False",
+        "type": "()"
+      },
+      {
+        "name": "True",
+        "type": "()"
+      }
+    ]
+  },
+  {
+    "type": "struct",
+    "name": "satoru::utils::i256::i256",
+    "members": [
+      {
+        "name": "mag",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "sign",
+        "type": "core::bool"
+      }
+    ]
+  },
+  {
+    "type": "struct",
+    "name": "core::array::Span::<core::starknet::contract_address::ContractAddress>",
+    "members": [
+      {
+        "name": "snapshot",
+        "type": "@core::array::Array::<core::starknet::contract_address::ContractAddress>"
+      }
+    ]
+  },
+  {
+    "type": "struct",
+    "name": "satoru::utils::span32::Span32::<core::starknet::contract_address::ContractAddress>",
+    "members": [
+      {
+        "name": "snapshot",
+        "type": "core::array::Span::<core::starknet::contract_address::ContractAddress>"
+      }
+    ]
+  },
+  {
+    "type": "struct",
+    "name": "satoru::deposit::deposit::Deposit",
+    "members": [
+      {
+        "name": "key",
+        "type": "core::felt252"
+      },
+      {
+        "name": "account",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "receiver",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "callback_contract",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "ui_fee_receiver",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "market",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "initial_long_token",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "initial_short_token",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "long_token_swap_path",
+        "type": "satoru::utils::span32::Span32::<core::starknet::contract_address::ContractAddress>"
+      },
+      {
+        "name": "short_token_swap_path",
+        "type": "satoru::utils::span32::Span32::<core::starknet::contract_address::ContractAddress>"
+      },
+      {
+        "name": "initial_long_token_amount",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "initial_short_token_amount",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "min_market_tokens",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "updated_at_block",
+        "type": "core::integer::u64"
+      },
+      {
+        "name": "execution_fee",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "callback_gas_limit",
+        "type": "core::integer::u256"
+      }
+    ]
+  },
+  {
+    "type": "struct",
+    "name": "core::array::Span::<core::felt252>",
+    "members": [
+      {
+        "name": "snapshot",
+        "type": "@core::array::Array::<core::felt252>"
+      }
+    ]
+  },
+  {
+    "type": "struct",
+    "name": "satoru::withdrawal::withdrawal::Withdrawal",
+    "members": [
+      {
+        "name": "key",
+        "type": "core::felt252"
+      },
+      {
+        "name": "account",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "receiver",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "callback_contract",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "ui_fee_receiver",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "market",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "long_token_swap_path",
+        "type": "satoru::utils::span32::Span32::<core::starknet::contract_address::ContractAddress>"
+      },
+      {
+        "name": "short_token_swap_path",
+        "type": "satoru::utils::span32::Span32::<core::starknet::contract_address::ContractAddress>"
+      },
+      {
+        "name": "market_token_amount",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "min_long_token_amount",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "min_short_token_amount",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "updated_at_block",
+        "type": "core::integer::u64"
+      },
+      {
+        "name": "execution_fee",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "callback_gas_limit",
+        "type": "core::integer::u256"
+      }
+    ]
+  },
+  {
+    "type": "struct",
+    "name": "satoru::event::event_emitter::IEventEmitterDispatcher",
+    "members": [
+      {
+        "name": "contract_address",
+        "type": "core::starknet::contract_address::ContractAddress"
+      }
+    ]
+  },
+  {
+    "type": "struct",
+    "name": "satoru::position::position::Position",
+    "members": [
+      {
+        "name": "key",
+        "type": "core::felt252"
+      },
+      {
+        "name": "account",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "market",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "collateral_token",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "size_in_usd",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "size_in_tokens",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "collateral_amount",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "borrowing_factor",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "funding_fee_amount_per_size",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "long_token_claimable_funding_amount_per_size",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "short_token_claimable_funding_amount_per_size",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "increased_at_block",
+        "type": "core::integer::u64"
+      },
+      {
+        "name": "decreased_at_block",
+        "type": "core::integer::u64"
+      },
+      {
+        "name": "is_long",
+        "type": "core::bool"
+      }
+    ]
+  },
+  {
+    "type": "struct",
+    "name": "satoru::price::price::Price",
+    "members": [
+      {
+        "name": "min",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "max",
+        "type": "core::integer::u256"
+      }
+    ]
+  },
+  {
+    "type": "enum",
+    "name": "satoru::order::order::OrderType",
+    "variants": [
+      {
+        "name": "MarketSwap",
+        "type": "()"
+      },
+      {
+        "name": "LimitSwap",
+        "type": "()"
+      },
+      {
+        "name": "MarketIncrease",
+        "type": "()"
+      },
+      {
+        "name": "LimitIncrease",
+        "type": "()"
+      },
+      {
+        "name": "MarketDecrease",
+        "type": "()"
+      },
+      {
+        "name": "LimitDecrease",
+        "type": "()"
+      },
+      {
+        "name": "StopLossDecrease",
+        "type": "()"
+      },
+      {
+        "name": "Liquidation",
+        "type": "()"
+      }
+    ]
+  },
+  {
+    "type": "struct",
+    "name": "satoru::position::position_event_utils::PositionIncreaseParams",
+    "members": [
+      {
+        "name": "event_emitter",
+        "type": "satoru::event::event_emitter::IEventEmitterDispatcher"
+      },
+      {
+        "name": "order_key",
+        "type": "core::felt252"
+      },
+      {
+        "name": "position_key",
+        "type": "core::felt252"
+      },
+      {
+        "name": "position",
+        "type": "satoru::position::position::Position"
+      },
+      {
+        "name": "index_token_price",
+        "type": "satoru::price::price::Price"
+      },
+      {
+        "name": "collateral_token_price",
+        "type": "satoru::price::price::Price"
+      },
+      {
+        "name": "execution_price",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "size_delta_usd",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "size_delta_in_tokens",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "collateral_delta_amount",
+        "type": "satoru::utils::i256::i256"
+      },
+      {
+        "name": "price_impact_usd",
+        "type": "satoru::utils::i256::i256"
+      },
+      {
+        "name": "price_impact_amount",
+        "type": "satoru::utils::i256::i256"
+      },
+      {
+        "name": "order_type",
+        "type": "satoru::order::order::OrderType"
+      }
+    ]
+  },
+  {
+    "type": "struct",
+    "name": "satoru::position::position_utils::DecreasePositionCollateralValuesOutput",
+    "members": [
+      {
+        "name": "output_token",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "output_amount",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "secondary_output_token",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "secondary_output_amount",
+        "type": "core::integer::u256"
+      }
+    ]
+  },
+  {
+    "type": "struct",
+    "name": "satoru::position::position_utils::DecreasePositionCollateralValues",
+    "members": [
+      {
+        "name": "execution_price",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "remaining_collateral_amount",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "base_pnl_usd",
+        "type": "satoru::utils::i256::i256"
+      },
+      {
+        "name": "uncapped_base_pnl_usd",
+        "type": "satoru::utils::i256::i256"
+      },
+      {
+        "name": "size_delta_in_tokens",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "price_impact_usd",
+        "type": "satoru::utils::i256::i256"
+      },
+      {
+        "name": "price_impact_diff_usd",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "output",
+        "type": "satoru::position::position_utils::DecreasePositionCollateralValuesOutput"
+      }
+    ]
+  },
+  {
+    "type": "struct",
+    "name": "satoru::pricing::position_pricing_utils::PositionReferralFees",
+    "members": [
+      {
+        "name": "referral_code",
+        "type": "core::felt252"
+      },
+      {
+        "name": "affiliate",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "trader",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "total_rebate_factor",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "trader_discount_factor",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "total_rebate_amount",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "trader_discount_amount",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "affiliate_reward_amount",
+        "type": "core::integer::u256"
+      }
+    ]
+  },
+  {
+    "type": "struct",
+    "name": "satoru::pricing::position_pricing_utils::PositionFundingFees",
+    "members": [
+      {
+        "name": "funding_fee_amount",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "claimable_long_token_amount",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "claimable_short_token_amount",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "latest_funding_fee_amount_per_size",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "latest_long_token_claimable_funding_amount_per_size",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "latest_short_token_claimable_funding_amount_per_size",
+        "type": "core::integer::u256"
+      }
+    ]
+  },
+  {
+    "type": "struct",
+    "name": "satoru::pricing::position_pricing_utils::PositionBorrowingFees",
+    "members": [
+      {
+        "name": "borrowing_fee_usd",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "borrowing_fee_amount",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "borrowing_fee_receiver_factor",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "borrowing_fee_amount_for_fee_receiver",
+        "type": "core::integer::u256"
+      }
+    ]
+  },
+  {
+    "type": "struct",
+    "name": "satoru::pricing::position_pricing_utils::PositionUiFees",
+    "members": [
+      {
+        "name": "ui_fee_receiver",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "ui_fee_receiver_factor",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "ui_fee_amount",
+        "type": "core::integer::u256"
+      }
+    ]
+  },
+  {
+    "type": "struct",
+    "name": "satoru::pricing::position_pricing_utils::PositionFees",
+    "members": [
+      {
+        "name": "referral",
+        "type": "satoru::pricing::position_pricing_utils::PositionReferralFees"
+      },
+      {
+        "name": "funding",
+        "type": "satoru::pricing::position_pricing_utils::PositionFundingFees"
+      },
+      {
+        "name": "borrowing",
+        "type": "satoru::pricing::position_pricing_utils::PositionBorrowingFees"
+      },
+      {
+        "name": "ui",
+        "type": "satoru::pricing::position_pricing_utils::PositionUiFees"
+      },
+      {
+        "name": "collateral_token_price",
+        "type": "satoru::price::price::Price"
+      },
+      {
+        "name": "position_fee_factor",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "protocol_fee_amount",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "position_fee_receiver_factor",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "fee_receiver_amount",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "fee_amount_for_pool",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "position_fee_amount_for_pool",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "position_fee_amount",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "total_cost_amount_excluding_funding",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "total_cost_amount",
+        "type": "core::integer::u256"
+      }
+    ]
+  },
+  {
+    "type": "enum",
+    "name": "satoru::order::order::DecreasePositionSwapType",
+    "variants": [
+      {
+        "name": "NoSwap",
+        "type": "()"
+      },
+      {
+        "name": "SwapPnlTokenToCollateralToken",
+        "type": "()"
+      },
+      {
+        "name": "SwapCollateralTokenToPnlToken",
+        "type": "()"
+      }
+    ]
+  },
+  {
+    "type": "struct",
+    "name": "satoru::order::order::Order",
+    "members": [
+      {
+        "name": "key",
+        "type": "core::felt252"
+      },
+      {
+        "name": "order_type",
+        "type": "satoru::order::order::OrderType"
+      },
+      {
+        "name": "decrease_position_swap_type",
+        "type": "satoru::order::order::DecreasePositionSwapType"
+      },
+      {
+        "name": "account",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "receiver",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "callback_contract",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "ui_fee_receiver",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "market",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "initial_collateral_token",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "swap_path",
+        "type": "satoru::utils::span32::Span32::<core::starknet::contract_address::ContractAddress>"
+      },
+      {
+        "name": "size_delta_usd",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "initial_collateral_delta_amount",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "trigger_price",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "acceptable_price",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "execution_fee",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "callback_gas_limit",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "min_output_amount",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "updated_at_block",
+        "type": "core::integer::u64"
+      },
+      {
+        "name": "is_long",
+        "type": "core::bool"
+      },
+      {
+        "name": "is_frozen",
+        "type": "core::bool"
+      }
+    ]
+  },
+  {
+    "type": "enum",
+    "name": "satoru::order::order::SecondaryOrderType",
+    "variants": [
+      {
+        "name": "None",
+        "type": "()"
+      },
+      {
+        "name": "Adl",
+        "type": "()"
+      }
+    ]
+  },
+  {
+    "type": "struct",
+    "name": "satoru::market::market_pool_value_info::MarketPoolValueInfo",
+    "members": [
+      {
+        "name": "pool_value",
+        "type": "satoru::utils::i256::i256"
+      },
+      {
+        "name": "long_pnl",
+        "type": "satoru::utils::i256::i256"
+      },
+      {
+        "name": "short_pnl",
+        "type": "satoru::utils::i256::i256"
+      },
+      {
+        "name": "net_pnl",
+        "type": "satoru::utils::i256::i256"
+      },
+      {
+        "name": "long_token_amount",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "short_token_amount",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "long_token_usd",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "short_token_usd",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "total_borrowing_fees",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "borrowing_fee_pool_factor",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "impact_pool_amount",
+        "type": "core::integer::u256"
+      }
+    ]
+  },
+  {
+    "type": "struct",
+    "name": "satoru::pricing::swap_pricing_utils::SwapFees",
+    "members": [
+      {
+        "name": "fee_receiver_amount",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "fee_amount_for_pool",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "amount_after_fees",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "ui_fee_receiver",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "ui_fee_receiver_factor",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "ui_fee_amount",
+        "type": "core::integer::u256"
+      }
+    ]
+  },
+  {
+    "type": "interface",
+    "name": "satoru::event::event_emitter::IEventEmitter",
+    "items": [
+      {
+        "type": "function",
+        "name": "emit_claimable_collateral_updated",
+        "inputs": [
+          {
+            "name": "market",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "token",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "account",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "time_key",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "delta",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "next_value",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "next_pool_value",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_claimable_funding_updated",
+        "inputs": [
+          {
+            "name": "market",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "token",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "account",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "delta",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "next_value",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "next_pool_value",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_position_impact_pool_amount_updated",
+        "inputs": [
+          {
+            "name": "market",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "delta",
+            "type": "satoru::utils::i256::i256"
+          },
+          {
+            "name": "next_value",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_swap_impact_pool_amount_updated",
+        "inputs": [
+          {
+            "name": "market",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "token",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "delta",
+            "type": "satoru::utils::i256::i256"
+          },
+          {
+            "name": "next_value",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_market_created",
+        "inputs": [
+          {
+            "name": "creator",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "market_token",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "index_token",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "long_token",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "short_token",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "market_type",
+            "type": "core::felt252"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_market_token_class_hash_updated",
+        "inputs": [
+          {
+            "name": "updated_by",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "previous_value",
+            "type": "core::starknet::class_hash::ClassHash"
+          },
+          {
+            "name": "new_value",
+            "type": "core::starknet::class_hash::ClassHash"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_claimable_fee_amount_updated",
+        "inputs": [
+          {
+            "name": "market",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "token",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "delta",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "next_value",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "fee_type",
+            "type": "core::felt252"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_claimable_ui_fee_amount_updated",
+        "inputs": [
+          {
+            "name": "ui_fee_receiver",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "market",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "token",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "delta",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "next_value",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "next_pool_value",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "fee_type",
+            "type": "core::felt252"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_fees_claimed",
+        "inputs": [
+          {
+            "name": "market",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "receiver",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "fee_amount",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_ui_fees_claimed",
+        "inputs": [
+          {
+            "name": "ui_fee_receiver",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "market",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "receiver",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "fee_amount",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "next_pool_value",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_deposit_created",
+        "inputs": [
+          {
+            "name": "key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "deposit",
+            "type": "satoru::deposit::deposit::Deposit"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_deposit_executed",
+        "inputs": [
+          {
+            "name": "key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "long_token_amount",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "short_token_amount",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "received_market_tokens",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_deposit_cancelled",
+        "inputs": [
+          {
+            "name": "key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "reason",
+            "type": "core::felt252"
+          },
+          {
+            "name": "reason_bytes",
+            "type": "core::array::Span::<core::felt252>"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_withdrawal_created",
+        "inputs": [
+          {
+            "name": "key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "withdrawal",
+            "type": "satoru::withdrawal::withdrawal::Withdrawal"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_withdrawal_executed",
+        "inputs": [
+          {
+            "name": "key",
+            "type": "core::felt252"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_withdrawal_cancelled",
+        "inputs": [
+          {
+            "name": "key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "reason",
+            "type": "core::felt252"
+          },
+          {
+            "name": "reason_bytes",
+            "type": "core::array::Span::<core::felt252>"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_position_increase",
+        "inputs": [
+          {
+            "name": "params",
+            "type": "satoru::position::position_event_utils::PositionIncreaseParams"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_position_decrease",
+        "inputs": [
+          {
+            "name": "order_key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "position_key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "position",
+            "type": "satoru::position::position::Position"
+          },
+          {
+            "name": "size_delta_usd",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "collateral_delta_amount",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "order_type",
+            "type": "satoru::order::order::OrderType"
+          },
+          {
+            "name": "values",
+            "type": "satoru::position::position_utils::DecreasePositionCollateralValues"
+          },
+          {
+            "name": "index_token_price",
+            "type": "satoru::price::price::Price"
+          },
+          {
+            "name": "collateral_token_price",
+            "type": "satoru::price::price::Price"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_insolvent_close_info",
+        "inputs": [
+          {
+            "name": "order_key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "position_collateral_amount",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "base_pnl_usd",
+            "type": "satoru::utils::i256::i256"
+          },
+          {
+            "name": "remaining_cost_usd",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_insufficient_funding_fee_payment",
+        "inputs": [
+          {
+            "name": "market",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "token",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "expected_amount",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "amount_paid_in_collateral_token",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "amount_paid_in_secondary_output_token",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_position_fees_collected",
+        "inputs": [
+          {
+            "name": "order_key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "position_key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "market",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "collateral_token",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "trade_size_usd",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "is_increase",
+            "type": "core::bool"
+          },
+          {
+            "name": "fees",
+            "type": "satoru::pricing::position_pricing_utils::PositionFees"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_position_fees_info",
+        "inputs": [
+          {
+            "name": "order_key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "position_key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "market",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "collateral_token",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "trade_size_usd",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "is_increase",
+            "type": "core::bool"
+          },
+          {
+            "name": "fees",
+            "type": "satoru::pricing::position_pricing_utils::PositionFees"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_order_created",
+        "inputs": [
+          {
+            "name": "key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "order",
+            "type": "satoru::order::order::Order"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_order_executed",
+        "inputs": [
+          {
+            "name": "key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "secondary_order_type",
+            "type": "satoru::order::order::SecondaryOrderType"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_order_updated",
+        "inputs": [
+          {
+            "name": "key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "size_delta_usd",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "acceptable_price",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "trigger_price",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "min_output_amount",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_order_size_delta_auto_updated",
+        "inputs": [
+          {
+            "name": "key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "size_delta_usd",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "next_size_delta_usd",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_order_collateral_delta_amount_auto_updated",
+        "inputs": [
+          {
+            "name": "key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "collateral_delta_amount",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "next_collateral_delta_amount",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_order_cancelled",
+        "inputs": [
+          {
+            "name": "key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "reason",
+            "type": "core::felt252"
+          },
+          {
+            "name": "reason_bytes",
+            "type": "core::array::Span::<core::felt252>"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_order_frozen",
+        "inputs": [
+          {
+            "name": "key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "reason",
+            "type": "core::felt252"
+          },
+          {
+            "name": "reason_bytes",
+            "type": "core::array::Span::<core::felt252>"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_affiliate_reward_updated",
+        "inputs": [
+          {
+            "name": "market",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "token",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "affiliate",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "delta",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "next_value",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "next_pool_value",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_affiliate_reward_claimed",
+        "inputs": [
+          {
+            "name": "market",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "token",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "affiliate",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "receiver",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "amount",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "next_pool_value",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_after_deposit_execution_error",
+        "inputs": [
+          {
+            "name": "key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "deposit",
+            "type": "satoru::deposit::deposit::Deposit"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_after_deposit_cancellation_error",
+        "inputs": [
+          {
+            "name": "key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "deposit",
+            "type": "satoru::deposit::deposit::Deposit"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_after_withdrawal_execution_error",
+        "inputs": [
+          {
+            "name": "key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "withdrawal",
+            "type": "satoru::withdrawal::withdrawal::Withdrawal"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_after_withdrawal_cancellation_error",
+        "inputs": [
+          {
+            "name": "key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "withdrawal",
+            "type": "satoru::withdrawal::withdrawal::Withdrawal"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_after_order_execution_error",
+        "inputs": [
+          {
+            "name": "key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "order",
+            "type": "satoru::order::order::Order"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_after_order_cancellation_error",
+        "inputs": [
+          {
+            "name": "key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "order",
+            "type": "satoru::order::order::Order"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_after_order_frozen_error",
+        "inputs": [
+          {
+            "name": "key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "order",
+            "type": "satoru::order::order::Order"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_adl_state_updated",
+        "inputs": [
+          {
+            "name": "market",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "is_long",
+            "type": "core::bool"
+          },
+          {
+            "name": "pnl_to_pool_factor",
+            "type": "core::felt252"
+          },
+          {
+            "name": "max_pnl_factor",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "should_enable_adl",
+            "type": "core::bool"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_set_bool",
+        "inputs": [
+          {
+            "name": "key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "data_bytes",
+            "type": "core::array::Span::<core::felt252>"
+          },
+          {
+            "name": "value",
+            "type": "core::bool"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_set_address",
+        "inputs": [
+          {
+            "name": "key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "data_bytes",
+            "type": "core::array::Span::<core::felt252>"
+          },
+          {
+            "name": "value",
+            "type": "core::starknet::contract_address::ContractAddress"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_set_felt252",
+        "inputs": [
+          {
+            "name": "key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "data_bytes",
+            "type": "core::array::Span::<core::felt252>"
+          },
+          {
+            "name": "value",
+            "type": "core::felt252"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_set_uint",
+        "inputs": [
+          {
+            "name": "key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "data_bytes",
+            "type": "core::array::Span::<core::felt252>"
+          },
+          {
+            "name": "value",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_set_int",
+        "inputs": [
+          {
+            "name": "key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "data_bytes",
+            "type": "core::array::Span::<core::felt252>"
+          },
+          {
+            "name": "value",
+            "type": "core::felt252"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_signal_add_oracle_signer",
+        "inputs": [
+          {
+            "name": "action_key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "account",
+            "type": "core::starknet::contract_address::ContractAddress"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_add_oracle_signer",
+        "inputs": [
+          {
+            "name": "action_key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "account",
+            "type": "core::starknet::contract_address::ContractAddress"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_signal_remove_oracle_signer",
+        "inputs": [
+          {
+            "name": "action_key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "account",
+            "type": "core::starknet::contract_address::ContractAddress"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_remove_oracle_signer",
+        "inputs": [
+          {
+            "name": "action_key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "account",
+            "type": "core::starknet::contract_address::ContractAddress"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_signal_set_fee_receiver",
+        "inputs": [
+          {
+            "name": "action_key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "account",
+            "type": "core::starknet::contract_address::ContractAddress"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_set_fee_receiver",
+        "inputs": [
+          {
+            "name": "action_key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "account",
+            "type": "core::starknet::contract_address::ContractAddress"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_signal_grant_role",
+        "inputs": [
+          {
+            "name": "action_key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "account",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "role_key",
+            "type": "core::felt252"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_grant_role",
+        "inputs": [
+          {
+            "name": "action_key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "account",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "role_key",
+            "type": "core::felt252"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_signal_revoke_role",
+        "inputs": [
+          {
+            "name": "action_key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "account",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "role_key",
+            "type": "core::felt252"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_revoke_role",
+        "inputs": [
+          {
+            "name": "action_key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "account",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "role_key",
+            "type": "core::felt252"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_signal_set_price_feed",
+        "inputs": [
+          {
+            "name": "action_key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "token",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "price_feed",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "price_feed_multiplier",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "price_feed_heartbeat_duration",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "stable_price",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_set_price_feed",
+        "inputs": [
+          {
+            "name": "action_key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "token",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "price_feed",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "price_feed_multiplier",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "price_feed_heartbeat_duration",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "stable_price",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_signal_pending_action",
+        "inputs": [
+          {
+            "name": "action_key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "action_label",
+            "type": "core::felt252"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_clear_pending_action",
+        "inputs": [
+          {
+            "name": "action_key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "action_label",
+            "type": "core::felt252"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_keeper_execution_fee",
+        "inputs": [
+          {
+            "name": "keeper",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "execution_fee_amount",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_execution_fee_refund",
+        "inputs": [
+          {
+            "name": "receiver",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "refund_fee_amount",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_market_pool_value_info",
+        "inputs": [
+          {
+            "name": "market",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "market_pool_value_info",
+            "type": "satoru::market::market_pool_value_info::MarketPoolValueInfo"
+          },
+          {
+            "name": "market_tokens_supply",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_pool_amount_updated",
+        "inputs": [
+          {
+            "name": "market",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "token",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "delta",
+            "type": "satoru::utils::i256::i256"
+          },
+          {
+            "name": "next_value",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_open_interest_in_tokens_updated",
+        "inputs": [
+          {
+            "name": "market",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "collateral_token",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "is_long",
+            "type": "core::bool"
+          },
+          {
+            "name": "delta",
+            "type": "satoru::utils::i256::i256"
+          },
+          {
+            "name": "next_value",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_open_interest_updated",
+        "inputs": [
+          {
+            "name": "market",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "collateral_token",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "is_long",
+            "type": "core::bool"
+          },
+          {
+            "name": "delta",
+            "type": "satoru::utils::i256::i256"
+          },
+          {
+            "name": "next_value",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_virtual_swap_inventory_updated",
+        "inputs": [
+          {
+            "name": "market",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "is_long_token",
+            "type": "core::bool"
+          },
+          {
+            "name": "virtual_market_id",
+            "type": "core::felt252"
+          },
+          {
+            "name": "delta",
+            "type": "satoru::utils::i256::i256"
+          },
+          {
+            "name": "next_value",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_virtual_position_inventory_updated",
+        "inputs": [
+          {
+            "name": "token",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "virtual_token_id",
+            "type": "core::felt252"
+          },
+          {
+            "name": "delta",
+            "type": "satoru::utils::i256::i256"
+          },
+          {
+            "name": "next_value",
+            "type": "satoru::utils::i256::i256"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_collateral_sum_updated",
+        "inputs": [
+          {
+            "name": "market",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "collateral_token",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "is_long",
+            "type": "core::bool"
+          },
+          {
+            "name": "delta",
+            "type": "satoru::utils::i256::i256"
+          },
+          {
+            "name": "next_value",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_cumulative_borrowing_factor_updated",
+        "inputs": [
+          {
+            "name": "market",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "is_long",
+            "type": "core::bool"
+          },
+          {
+            "name": "delta",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "next_value",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_funding_fee_amount_per_size_updated",
+        "inputs": [
+          {
+            "name": "market",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "collateral_token",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "is_long",
+            "type": "core::bool"
+          },
+          {
+            "name": "delta",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "next_value",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_claimable_funding_amount_per_size_updated",
+        "inputs": [
+          {
+            "name": "market",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "collateral_token",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "is_long",
+            "type": "core::bool"
+          },
+          {
+            "name": "delta",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "next_value",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_funding_fees_claimed",
+        "inputs": [
+          {
+            "name": "market",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "token",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "account",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "receiver",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "amount",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "next_pool_value",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_collateral_claimed",
+        "inputs": [
+          {
+            "name": "market",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "token",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "account",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "receiver",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "time_key",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "amount",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "next_pool_value",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_ui_fee_factor_updated",
+        "inputs": [
+          {
+            "name": "account",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "ui_fee_factor",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_oracle_price_update",
+        "inputs": [
+          {
+            "name": "token",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "min_price",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "max_price",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "is_price_feed",
+            "type": "core::bool"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_signer_added",
+        "inputs": [
+          {
+            "name": "account",
+            "type": "core::starknet::contract_address::ContractAddress"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_signer_removed",
+        "inputs": [
+          {
+            "name": "account",
+            "type": "core::starknet::contract_address::ContractAddress"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_swap_reverted",
+        "inputs": [
+          {
+            "name": "reason",
+            "type": "core::felt252"
+          },
+          {
+            "name": "reason_bytes",
+            "type": "core::array::Span::<core::felt252>"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_swap_info",
+        "inputs": [
+          {
+            "name": "order_key",
+            "type": "core::felt252"
+          },
+          {
+            "name": "market",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "receiver",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "token_in",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "token_out",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "token_in_price",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "token_out_price",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "amount_in",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "amount_in_after_fees",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "amount_out",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "price_impact_usd",
+            "type": "satoru::utils::i256::i256"
+          },
+          {
+            "name": "price_impact_amount",
+            "type": "satoru::utils::i256::i256"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_swap_fees_collected",
+        "inputs": [
+          {
+            "name": "market",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "token",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "token_price",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "action",
+            "type": "core::felt252"
+          },
+          {
+            "name": "fees",
+            "type": "satoru::pricing::swap_pricing_utils::SwapFees"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_oracle_price_updated",
+        "inputs": [
+          {
+            "name": "token",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "min_price",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "max_price",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "is_price_feed",
+            "type": "core::bool"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_set_handler",
+        "inputs": [
+          {
+            "name": "handler",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "is_active",
+            "type": "core::bool"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_set_trader_referral_code",
+        "inputs": [
+          {
+            "name": "account",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "code",
+            "type": "core::felt252"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_set_tier",
+        "inputs": [
+          {
+            "name": "tier_id",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "total_rebate",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "discount_share",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_set_referrer_tier",
+        "inputs": [
+          {
+            "name": "referrer",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "tier_id",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_set_referrer_discount_share",
+        "inputs": [
+          {
+            "name": "referrer",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "discount_share",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_register_code",
+        "inputs": [
+          {
+            "name": "account",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "code",
+            "type": "core::felt252"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_set_code_owner",
+        "inputs": [
+          {
+            "name": "account",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "new_account",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "code",
+            "type": "core::felt252"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_gov_set_code_owner",
+        "inputs": [
+          {
+            "name": "code",
+            "type": "core::felt252"
+          },
+          {
+            "name": "new_account",
+            "type": "core::starknet::contract_address::ContractAddress"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "emit_set_gov",
+        "inputs": [
+          {
+            "name": "prev_gov",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "next_gov",
+            "type": "core::starknet::contract_address::ContractAddress"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::ClaimableCollateralUpdated",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "market",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "token",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "account",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "time_key",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "delta",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "next_value",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "next_pool_value",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::ClaimableFundingUpdated",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "market",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "token",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "account",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "delta",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "next_value",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "next_pool_value",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::PositionImpactPoolAmountUpdated",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "market",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "delta",
+        "type": "satoru::utils::i256::i256",
+        "kind": "data"
+      },
+      {
+        "name": "next_value",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::SwapImpactPoolAmountUpdated",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "market",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "token",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "delta",
+        "type": "satoru::utils::i256::i256",
+        "kind": "data"
+      },
+      {
+        "name": "next_value",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::MarketCreated",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "creator",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "market_token",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "index_token",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "long_token",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "short_token",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "market_type",
+        "type": "core::felt252",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::MarketTokenClassHashUpdated",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "updated_by",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "previous_value",
+        "type": "core::starknet::class_hash::ClassHash",
+        "kind": "data"
+      },
+      {
+        "name": "new_value",
+        "type": "core::starknet::class_hash::ClassHash",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::ClaimableFeeAmountUpdated",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "market",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "token",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "delta",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "next_value",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "fee_type",
+        "type": "core::felt252",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::ClaimableUiFeeAmountUpdated",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "ui_fee_receiver",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "market",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "token",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "delta",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "next_value",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "next_pool_value",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "fee_type",
+        "type": "core::felt252",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::FeesClaimed",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "market",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "receiver",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "fee_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::UiFeesClaimed",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "ui_fee_receiver",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "market",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "receiver",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "fee_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "next_pool_value",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::DepositCreated",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "account",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "receiver",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "callback_contract",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "market",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "initial_long_token",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "initial_short_token",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "long_token_swap_path",
+        "type": "satoru::utils::span32::Span32::<core::starknet::contract_address::ContractAddress>",
+        "kind": "data"
+      },
+      {
+        "name": "short_token_swap_path",
+        "type": "satoru::utils::span32::Span32::<core::starknet::contract_address::ContractAddress>",
+        "kind": "data"
+      },
+      {
+        "name": "initial_long_token_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "initial_short_token_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "min_market_tokens",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "updated_at_block",
+        "type": "core::integer::u64",
+        "kind": "data"
+      },
+      {
+        "name": "execution_fee",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "callback_gas_limit",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::DepositExecuted",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "long_token_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "short_token_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "received_market_tokens",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::DepositCancelled",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "reason",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "reason_bytes",
+        "type": "core::array::Span::<core::felt252>",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::WithdrawalCreated",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "account",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "receiver",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "callback_contract",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "market",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "market_token_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "min_long_token_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "min_short_token_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "updated_at_block",
+        "type": "core::integer::u64",
+        "kind": "data"
+      },
+      {
+        "name": "execution_fee",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "callback_gas_limit",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::WithdrawalExecuted",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "key",
+        "type": "core::felt252",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::WithdrawalCancelled",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "reason",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "reason_bytes",
+        "type": "core::array::Span::<core::felt252>",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::OrderCreated",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "order",
+        "type": "satoru::order::order::Order",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::OrderExecuted",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "secondary_order_type",
+        "type": "satoru::order::order::SecondaryOrderType",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::OrderUpdated",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "size_delta_usd",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "acceptable_price",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "trigger_price",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "min_output_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::OrderSizeDeltaAutoUpdated",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "size_delta_usd",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "next_size_delta_usd",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::OrderCollateralDeltaAmountAutoUpdated",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "collateral_delta_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "next_collateral_delta_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::OrderCancelled",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "reason",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "reason_bytes",
+        "type": "core::array::Span::<core::felt252>",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::OrderFrozen",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "reason",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "reason_bytes",
+        "type": "core::array::Span::<core::felt252>",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::PositionIncrease",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "account",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "market",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "collateral_token",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "size_in_usd",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "size_in_tokens",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "collateral_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "borrowing_factor",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "funding_fee_amount_per_size",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "long_token_claimable_funding_amount_per_size",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "short_token_claimable_funding_amount_per_size",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "execution_price",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "index_token_price_max",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "index_token_price_min",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "collateral_token_price_max",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "collateral_token_price_min",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "size_delta_usd",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "size_delta_in_tokens",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "order_type",
+        "type": "satoru::order::order::OrderType",
+        "kind": "data"
+      },
+      {
+        "name": "collateral_delta_amount",
+        "type": "satoru::utils::i256::i256",
+        "kind": "data"
+      },
+      {
+        "name": "price_impact_usd",
+        "type": "satoru::utils::i256::i256",
+        "kind": "data"
+      },
+      {
+        "name": "price_impact_amount",
+        "type": "satoru::utils::i256::i256",
+        "kind": "data"
+      },
+      {
+        "name": "is_long",
+        "type": "core::bool",
+        "kind": "data"
+      },
+      {
+        "name": "order_key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "position_key",
+        "type": "core::felt252",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::PositionDecrease",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "account",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "market",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "collateral_token",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "size_in_usd",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "size_in_tokens",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "collateral_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "borrowing_factor",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "funding_fee_amount_per_size",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "long_token_claimable_funding_amount_per_size",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "short_token_claimable_funding_amount_per_size",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "execution_price",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "index_token_price_max",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "index_token_price_min",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "collateral_token_price_max",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "collateral_token_price_min",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "size_delta_usd",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "size_delta_in_tokens",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "collateral_delta_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "price_impact_diff_usd",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "order_type",
+        "type": "satoru::order::order::OrderType",
+        "kind": "data"
+      },
+      {
+        "name": "price_impact_usd",
+        "type": "satoru::utils::i256::i256",
+        "kind": "data"
+      },
+      {
+        "name": "base_pnl_usd",
+        "type": "satoru::utils::i256::i256",
+        "kind": "data"
+      },
+      {
+        "name": "uncapped_base_pnl_usd",
+        "type": "satoru::utils::i256::i256",
+        "kind": "data"
+      },
+      {
+        "name": "is_long",
+        "type": "core::bool",
+        "kind": "data"
+      },
+      {
+        "name": "order_key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "position_key",
+        "type": "core::felt252",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::InsolventClose",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "order_key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "position_collateral_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "base_pnl_usd",
+        "type": "satoru::utils::i256::i256",
+        "kind": "data"
+      },
+      {
+        "name": "remaining_cost_usd",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::InsufficientFundingFeePayment",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "market",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "token",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "expected_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "amount_paid_in_collateral_token",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "amount_paid_in_secondary_output_token",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::PositionFeesCollected",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "order_key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "position_key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "referral_code",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "market",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "collateral_token",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "affiliate",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "trader",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "ui_fee_receiver",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "collateral_token_price_min",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "collateral_token_price_max",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "trade_size_usd",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "total_rebate_factor",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "trader_discount_factor",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "total_rebate_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "trader_discount_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "affiliate_reward_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "funding_fee_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "claimable_long_token_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "claimable_short_token_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "latest_funding_fee_amount_per_size",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "latest_long_token_claimable_funding_amount_per_size",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "latest_short_token_claimable_funding_amount_per_size",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "borrowing_fee_usd",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "borrowing_fee_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "borrowing_fee_receiver_factor",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "borrowing_fee_amount_for_fee_receiver",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "position_fee_factor",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "protocol_fee_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "position_fee_receiver_factor",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "fee_receiver_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "fee_amount_for_pool",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "position_fee_amount_for_pool",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "position_fee_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "total_cost_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "ui_fee_receiver_factor",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "ui_fee_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "is_increase",
+        "type": "core::bool",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::PositionFeesInfo",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "order_key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "position_key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "referral_code",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "market",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "collateral_token",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "affiliate",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "trader",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "ui_fee_receiver",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "collateral_token_price_min",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "collateral_token_price_max",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "trade_size_usd",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "total_rebate_factor",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "trader_discount_factor",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "total_rebate_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "trader_discount_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "affiliate_reward_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "funding_fee_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "claimable_long_token_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "claimable_short_token_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "latest_funding_fee_amount_per_size",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "latest_long_token_claimable_funding_amount_per_size",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "latest_short_token_claimable_funding_amount_per_size",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "borrowing_fee_usd",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "borrowing_fee_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "borrowing_fee_receiver_factor",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "borrowing_fee_amount_for_fee_receiver",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "position_fee_factor",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "protocol_fee_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "position_fee_receiver_factor",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "fee_receiver_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "fee_amount_for_pool",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "position_fee_amount_for_pool",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "position_fee_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "total_cost_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "ui_fee_receiver_factor",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "ui_fee_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "is_increase",
+        "type": "core::bool",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::AffiliateRewardUpdated",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "market",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "token",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "affiliate",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "delta",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "next_value",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "next_pool_value",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::AffiliateRewardClaimed",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "market",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "token",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "affiliate",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "receiver",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "next_pool_value",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::AfterDepositExecutionError",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "deposit",
+        "type": "satoru::deposit::deposit::Deposit",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::AfterDepositCancellationError",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "deposit",
+        "type": "satoru::deposit::deposit::Deposit",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::AfterWithdrawalExecutionError",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "withdrawal",
+        "type": "satoru::withdrawal::withdrawal::Withdrawal",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::AfterWithdrawalCancellationError",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "withdrawal",
+        "type": "satoru::withdrawal::withdrawal::Withdrawal",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::AfterOrderExecutionError",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "order",
+        "type": "satoru::order::order::Order",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::AfterOrderCancellationError",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "order",
+        "type": "satoru::order::order::Order",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::AfterOrderFrozenError",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "order",
+        "type": "satoru::order::order::Order",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::AdlStateUpdated",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "market",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "is_long",
+        "type": "core::bool",
+        "kind": "data"
+      },
+      {
+        "name": "pnl_to_pool_factor",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "max_pnl_factor",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "should_enable_adl",
+        "type": "core::bool",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::SetBool",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "data_bytes",
+        "type": "core::array::Span::<core::felt252>",
+        "kind": "data"
+      },
+      {
+        "name": "value",
+        "type": "core::bool",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::SetAddress",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "data_bytes",
+        "type": "core::array::Span::<core::felt252>",
+        "kind": "data"
+      },
+      {
+        "name": "value",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::SetFelt252",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "data_bytes",
+        "type": "core::array::Span::<core::felt252>",
+        "kind": "data"
+      },
+      {
+        "name": "value",
+        "type": "core::felt252",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::SetUint",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "data_bytes",
+        "type": "core::array::Span::<core::felt252>",
+        "kind": "data"
+      },
+      {
+        "name": "value",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::SetInt",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "data_bytes",
+        "type": "core::array::Span::<core::felt252>",
+        "kind": "data"
+      },
+      {
+        "name": "value",
+        "type": "core::felt252",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::SignalAddOracleSigner",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "action_key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "account",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::AddOracleSigner",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "action_key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "account",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::SignalRemoveOracleSigner",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "action_key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "account",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::RemoveOracleSigner",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "action_key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "account",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::SignalSetFeeReceiver",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "action_key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "account",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::SetFeeReceiver",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "action_key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "account",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::SignalGrantRole",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "action_key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "account",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "role_key",
+        "type": "core::felt252",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::GrantRole",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "action_key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "account",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "role_key",
+        "type": "core::felt252",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::SignalRevokeRole",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "action_key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "account",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "role_key",
+        "type": "core::felt252",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::RevokeRole",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "action_key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "account",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "role_key",
+        "type": "core::felt252",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::SignalSetPriceFeed",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "action_key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "token",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "price_feed",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "price_feed_multiplier",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "price_feed_heartbeat_duration",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "stable_price",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::SetPriceFeed",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "action_key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "token",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "price_feed",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "price_feed_multiplier",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "price_feed_heartbeat_duration",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "stable_price",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::SignalPendingAction",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "action_key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "action_label",
+        "type": "core::felt252",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::ClearPendingAction",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "action_key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "action_label",
+        "type": "core::felt252",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::KeeperExecutionFee",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "keeper",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "execution_fee_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::ExecutionFeeRefund",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "receiver",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "refund_fee_amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::MarketPoolValueInfoEvent",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "market",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "market_pool_value_info",
+        "type": "satoru::market::market_pool_value_info::MarketPoolValueInfo",
+        "kind": "data"
+      },
+      {
+        "name": "market_tokens_supply",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::PoolAmountUpdated",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "market",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "token",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "delta",
+        "type": "satoru::utils::i256::i256",
+        "kind": "data"
+      },
+      {
+        "name": "next_value",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::OpenInterestInTokensUpdated",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "market",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "collateral_token",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "is_long",
+        "type": "core::bool",
+        "kind": "data"
+      },
+      {
+        "name": "delta",
+        "type": "satoru::utils::i256::i256",
+        "kind": "data"
+      },
+      {
+        "name": "next_value",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::OpenInterestUpdated",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "market",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "collateral_token",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "is_long",
+        "type": "core::bool",
+        "kind": "data"
+      },
+      {
+        "name": "delta",
+        "type": "satoru::utils::i256::i256",
+        "kind": "data"
+      },
+      {
+        "name": "next_value",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::VirtualSwapInventoryUpdated",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "market",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "is_long_token",
+        "type": "core::bool",
+        "kind": "data"
+      },
+      {
+        "name": "virtual_market_id",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "delta",
+        "type": "satoru::utils::i256::i256",
+        "kind": "data"
+      },
+      {
+        "name": "next_value",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::VirtualPositionInventoryUpdated",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "token",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "virtual_token_id",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "delta",
+        "type": "satoru::utils::i256::i256",
+        "kind": "data"
+      },
+      {
+        "name": "next_value",
+        "type": "satoru::utils::i256::i256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::CollateralSumUpdated",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "market",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "collateral_token",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "is_long",
+        "type": "core::bool",
+        "kind": "data"
+      },
+      {
+        "name": "delta",
+        "type": "satoru::utils::i256::i256",
+        "kind": "data"
+      },
+      {
+        "name": "next_value",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::CumulativeBorrowingFactorUpdated",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "market",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "is_long",
+        "type": "core::bool",
+        "kind": "data"
+      },
+      {
+        "name": "delta",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "next_value",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::FundingFeeAmountPerSizeUpdated",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "market",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "collateral_token",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "is_long",
+        "type": "core::bool",
+        "kind": "data"
+      },
+      {
+        "name": "delta",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "next_value",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::ClaimableFundingAmountPerSizeUpdated",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "market",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "collateral_token",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "is_long",
+        "type": "core::bool",
+        "kind": "data"
+      },
+      {
+        "name": "delta",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "next_value",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::FundingFeesClaimed",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "market",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "token",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "account",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "receiver",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "next_pool_value",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::CollateralClaimed",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "market",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "token",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "account",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "receiver",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "time_key",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "next_pool_value",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::UiFeeFactorUpdated",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "account",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "ui_fee_factor",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::OraclePriceUpdate",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "token",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "min_price",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "max_price",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "is_price_feed",
+        "type": "core::bool",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::SignerAdded",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "account",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::SignerRemoved",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "account",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::SwapReverted",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "reason",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "reason_bytes",
+        "type": "core::array::Span::<core::felt252>",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::SwapInfo",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "order_key",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "market",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "receiver",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "token_in",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "token_out",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "token_in_price",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "token_out_price",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "amount_in",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "amount_in_after_fees",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "amount_out",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "price_impact_usd",
+        "type": "satoru::utils::i256::i256",
+        "kind": "data"
+      },
+      {
+        "name": "price_impact_amount",
+        "type": "satoru::utils::i256::i256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::SwapFeesCollected",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "market",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "token",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "token_price",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "action",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "fees",
+        "type": "satoru::pricing::swap_pricing_utils::SwapFees",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::SetHandler",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "handler",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "is_active",
+        "type": "core::bool",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::SetTraderReferralCode",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "account",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "code",
+        "type": "core::felt252",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::SetTier",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "tier_id",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "total_rebate",
+        "type": "core::integer::u256",
+        "kind": "data"
+      },
+      {
+        "name": "discount_share",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::SetReferrerTier",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "referrer",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "tier_id",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::SetReferrerDiscountShare",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "referrer",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "discount_share",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::SetRegisterCode",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "account",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "code",
+        "type": "core::felt252",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::SetCodeOwner",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "account",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "new_account",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "code",
+        "type": "core::felt252",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::GovSetCodeOwner",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "code",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "new_account",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::SetGov",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "prev_gov",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "next_gov",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::event::event_emitter::EventEmitter::Event",
+    "kind": "enum",
+    "variants": [
+      {
+        "name": "ClaimableCollateralUpdated",
+        "type": "satoru::event::event_emitter::EventEmitter::ClaimableCollateralUpdated",
+        "kind": "nested"
+      },
+      {
+        "name": "ClaimableFundingUpdated",
+        "type": "satoru::event::event_emitter::EventEmitter::ClaimableFundingUpdated",
+        "kind": "nested"
+      },
+      {
+        "name": "PositionImpactPoolAmountUpdated",
+        "type": "satoru::event::event_emitter::EventEmitter::PositionImpactPoolAmountUpdated",
+        "kind": "nested"
+      },
+      {
+        "name": "SwapImpactPoolAmountUpdated",
+        "type": "satoru::event::event_emitter::EventEmitter::SwapImpactPoolAmountUpdated",
+        "kind": "nested"
+      },
+      {
+        "name": "MarketCreated",
+        "type": "satoru::event::event_emitter::EventEmitter::MarketCreated",
+        "kind": "nested"
+      },
+      {
+        "name": "MarketTokenClassHashUpdated",
+        "type": "satoru::event::event_emitter::EventEmitter::MarketTokenClassHashUpdated",
+        "kind": "nested"
+      },
+      {
+        "name": "ClaimableFeeAmountUpdated",
+        "type": "satoru::event::event_emitter::EventEmitter::ClaimableFeeAmountUpdated",
+        "kind": "nested"
+      },
+      {
+        "name": "ClaimableUiFeeAmountUpdated",
+        "type": "satoru::event::event_emitter::EventEmitter::ClaimableUiFeeAmountUpdated",
+        "kind": "nested"
+      },
+      {
+        "name": "FeesClaimed",
+        "type": "satoru::event::event_emitter::EventEmitter::FeesClaimed",
+        "kind": "nested"
+      },
+      {
+        "name": "UiFeesClaimed",
+        "type": "satoru::event::event_emitter::EventEmitter::UiFeesClaimed",
+        "kind": "nested"
+      },
+      {
+        "name": "DepositCreated",
+        "type": "satoru::event::event_emitter::EventEmitter::DepositCreated",
+        "kind": "nested"
+      },
+      {
+        "name": "DepositExecuted",
+        "type": "satoru::event::event_emitter::EventEmitter::DepositExecuted",
+        "kind": "nested"
+      },
+      {
+        "name": "DepositCancelled",
+        "type": "satoru::event::event_emitter::EventEmitter::DepositCancelled",
+        "kind": "nested"
+      },
+      {
+        "name": "WithdrawalCreated",
+        "type": "satoru::event::event_emitter::EventEmitter::WithdrawalCreated",
+        "kind": "nested"
+      },
+      {
+        "name": "WithdrawalExecuted",
+        "type": "satoru::event::event_emitter::EventEmitter::WithdrawalExecuted",
+        "kind": "nested"
+      },
+      {
+        "name": "WithdrawalCancelled",
+        "type": "satoru::event::event_emitter::EventEmitter::WithdrawalCancelled",
+        "kind": "nested"
+      },
+      {
+        "name": "OrderCreated",
+        "type": "satoru::event::event_emitter::EventEmitter::OrderCreated",
+        "kind": "nested"
+      },
+      {
+        "name": "OrderExecuted",
+        "type": "satoru::event::event_emitter::EventEmitter::OrderExecuted",
+        "kind": "nested"
+      },
+      {
+        "name": "OrderUpdated",
+        "type": "satoru::event::event_emitter::EventEmitter::OrderUpdated",
+        "kind": "nested"
+      },
+      {
+        "name": "OrderSizeDeltaAutoUpdated",
+        "type": "satoru::event::event_emitter::EventEmitter::OrderSizeDeltaAutoUpdated",
+        "kind": "nested"
+      },
+      {
+        "name": "OrderCollateralDeltaAmountAutoUpdated",
+        "type": "satoru::event::event_emitter::EventEmitter::OrderCollateralDeltaAmountAutoUpdated",
+        "kind": "nested"
+      },
+      {
+        "name": "OrderCancelled",
+        "type": "satoru::event::event_emitter::EventEmitter::OrderCancelled",
+        "kind": "nested"
+      },
+      {
+        "name": "OrderFrozen",
+        "type": "satoru::event::event_emitter::EventEmitter::OrderFrozen",
+        "kind": "nested"
+      },
+      {
+        "name": "PositionIncrease",
+        "type": "satoru::event::event_emitter::EventEmitter::PositionIncrease",
+        "kind": "nested"
+      },
+      {
+        "name": "PositionDecrease",
+        "type": "satoru::event::event_emitter::EventEmitter::PositionDecrease",
+        "kind": "nested"
+      },
+      {
+        "name": "InsolventClose",
+        "type": "satoru::event::event_emitter::EventEmitter::InsolventClose",
+        "kind": "nested"
+      },
+      {
+        "name": "InsufficientFundingFeePayment",
+        "type": "satoru::event::event_emitter::EventEmitter::InsufficientFundingFeePayment",
+        "kind": "nested"
+      },
+      {
+        "name": "PositionFeesCollected",
+        "type": "satoru::event::event_emitter::EventEmitter::PositionFeesCollected",
+        "kind": "nested"
+      },
+      {
+        "name": "PositionFeesInfo",
+        "type": "satoru::event::event_emitter::EventEmitter::PositionFeesInfo",
+        "kind": "nested"
+      },
+      {
+        "name": "AffiliateRewardUpdated",
+        "type": "satoru::event::event_emitter::EventEmitter::AffiliateRewardUpdated",
+        "kind": "nested"
+      },
+      {
+        "name": "AffiliateRewardClaimed",
+        "type": "satoru::event::event_emitter::EventEmitter::AffiliateRewardClaimed",
+        "kind": "nested"
+      },
+      {
+        "name": "AfterDepositExecutionError",
+        "type": "satoru::event::event_emitter::EventEmitter::AfterDepositExecutionError",
+        "kind": "nested"
+      },
+      {
+        "name": "AfterDepositCancellationError",
+        "type": "satoru::event::event_emitter::EventEmitter::AfterDepositCancellationError",
+        "kind": "nested"
+      },
+      {
+        "name": "AfterWithdrawalExecutionError",
+        "type": "satoru::event::event_emitter::EventEmitter::AfterWithdrawalExecutionError",
+        "kind": "nested"
+      },
+      {
+        "name": "AfterWithdrawalCancellationError",
+        "type": "satoru::event::event_emitter::EventEmitter::AfterWithdrawalCancellationError",
+        "kind": "nested"
+      },
+      {
+        "name": "AfterOrderExecutionError",
+        "type": "satoru::event::event_emitter::EventEmitter::AfterOrderExecutionError",
+        "kind": "nested"
+      },
+      {
+        "name": "AfterOrderCancellationError",
+        "type": "satoru::event::event_emitter::EventEmitter::AfterOrderCancellationError",
+        "kind": "nested"
+      },
+      {
+        "name": "AfterOrderFrozenError",
+        "type": "satoru::event::event_emitter::EventEmitter::AfterOrderFrozenError",
+        "kind": "nested"
+      },
+      {
+        "name": "AdlStateUpdated",
+        "type": "satoru::event::event_emitter::EventEmitter::AdlStateUpdated",
+        "kind": "nested"
+      },
+      {
+        "name": "SetBool",
+        "type": "satoru::event::event_emitter::EventEmitter::SetBool",
+        "kind": "nested"
+      },
+      {
+        "name": "SetAddress",
+        "type": "satoru::event::event_emitter::EventEmitter::SetAddress",
+        "kind": "nested"
+      },
+      {
+        "name": "SetFelt252",
+        "type": "satoru::event::event_emitter::EventEmitter::SetFelt252",
+        "kind": "nested"
+      },
+      {
+        "name": "SetUint",
+        "type": "satoru::event::event_emitter::EventEmitter::SetUint",
+        "kind": "nested"
+      },
+      {
+        "name": "SetInt",
+        "type": "satoru::event::event_emitter::EventEmitter::SetInt",
+        "kind": "nested"
+      },
+      {
+        "name": "SignalAddOracleSigner",
+        "type": "satoru::event::event_emitter::EventEmitter::SignalAddOracleSigner",
+        "kind": "nested"
+      },
+      {
+        "name": "AddOracleSigner",
+        "type": "satoru::event::event_emitter::EventEmitter::AddOracleSigner",
+        "kind": "nested"
+      },
+      {
+        "name": "SignalRemoveOracleSigner",
+        "type": "satoru::event::event_emitter::EventEmitter::SignalRemoveOracleSigner",
+        "kind": "nested"
+      },
+      {
+        "name": "RemoveOracleSigner",
+        "type": "satoru::event::event_emitter::EventEmitter::RemoveOracleSigner",
+        "kind": "nested"
+      },
+      {
+        "name": "SignalSetFeeReceiver",
+        "type": "satoru::event::event_emitter::EventEmitter::SignalSetFeeReceiver",
+        "kind": "nested"
+      },
+      {
+        "name": "SetFeeReceiver",
+        "type": "satoru::event::event_emitter::EventEmitter::SetFeeReceiver",
+        "kind": "nested"
+      },
+      {
+        "name": "SignalGrantRole",
+        "type": "satoru::event::event_emitter::EventEmitter::SignalGrantRole",
+        "kind": "nested"
+      },
+      {
+        "name": "GrantRole",
+        "type": "satoru::event::event_emitter::EventEmitter::GrantRole",
+        "kind": "nested"
+      },
+      {
+        "name": "SignalRevokeRole",
+        "type": "satoru::event::event_emitter::EventEmitter::SignalRevokeRole",
+        "kind": "nested"
+      },
+      {
+        "name": "RevokeRole",
+        "type": "satoru::event::event_emitter::EventEmitter::RevokeRole",
+        "kind": "nested"
+      },
+      {
+        "name": "SignalSetPriceFeed",
+        "type": "satoru::event::event_emitter::EventEmitter::SignalSetPriceFeed",
+        "kind": "nested"
+      },
+      {
+        "name": "SetPriceFeed",
+        "type": "satoru::event::event_emitter::EventEmitter::SetPriceFeed",
+        "kind": "nested"
+      },
+      {
+        "name": "SignalPendingAction",
+        "type": "satoru::event::event_emitter::EventEmitter::SignalPendingAction",
+        "kind": "nested"
+      },
+      {
+        "name": "ClearPendingAction",
+        "type": "satoru::event::event_emitter::EventEmitter::ClearPendingAction",
+        "kind": "nested"
+      },
+      {
+        "name": "KeeperExecutionFee",
+        "type": "satoru::event::event_emitter::EventEmitter::KeeperExecutionFee",
+        "kind": "nested"
+      },
+      {
+        "name": "ExecutionFeeRefund",
+        "type": "satoru::event::event_emitter::EventEmitter::ExecutionFeeRefund",
+        "kind": "nested"
+      },
+      {
+        "name": "MarketPoolValueInfoEvent",
+        "type": "satoru::event::event_emitter::EventEmitter::MarketPoolValueInfoEvent",
+        "kind": "nested"
+      },
+      {
+        "name": "PoolAmountUpdated",
+        "type": "satoru::event::event_emitter::EventEmitter::PoolAmountUpdated",
+        "kind": "nested"
+      },
+      {
+        "name": "OpenInterestInTokensUpdated",
+        "type": "satoru::event::event_emitter::EventEmitter::OpenInterestInTokensUpdated",
+        "kind": "nested"
+      },
+      {
+        "name": "OpenInterestUpdated",
+        "type": "satoru::event::event_emitter::EventEmitter::OpenInterestUpdated",
+        "kind": "nested"
+      },
+      {
+        "name": "VirtualSwapInventoryUpdated",
+        "type": "satoru::event::event_emitter::EventEmitter::VirtualSwapInventoryUpdated",
+        "kind": "nested"
+      },
+      {
+        "name": "VirtualPositionInventoryUpdated",
+        "type": "satoru::event::event_emitter::EventEmitter::VirtualPositionInventoryUpdated",
+        "kind": "nested"
+      },
+      {
+        "name": "CollateralSumUpdated",
+        "type": "satoru::event::event_emitter::EventEmitter::CollateralSumUpdated",
+        "kind": "nested"
+      },
+      {
+        "name": "CumulativeBorrowingFactorUpdated",
+        "type": "satoru::event::event_emitter::EventEmitter::CumulativeBorrowingFactorUpdated",
+        "kind": "nested"
+      },
+      {
+        "name": "FundingFeeAmountPerSizeUpdated",
+        "type": "satoru::event::event_emitter::EventEmitter::FundingFeeAmountPerSizeUpdated",
+        "kind": "nested"
+      },
+      {
+        "name": "ClaimableFundingAmountPerSizeUpdated",
+        "type": "satoru::event::event_emitter::EventEmitter::ClaimableFundingAmountPerSizeUpdated",
+        "kind": "nested"
+      },
+      {
+        "name": "FundingFeesClaimed",
+        "type": "satoru::event::event_emitter::EventEmitter::FundingFeesClaimed",
+        "kind": "nested"
+      },
+      {
+        "name": "CollateralClaimed",
+        "type": "satoru::event::event_emitter::EventEmitter::CollateralClaimed",
+        "kind": "nested"
+      },
+      {
+        "name": "UiFeeFactorUpdated",
+        "type": "satoru::event::event_emitter::EventEmitter::UiFeeFactorUpdated",
+        "kind": "nested"
+      },
+      {
+        "name": "OraclePriceUpdate",
+        "type": "satoru::event::event_emitter::EventEmitter::OraclePriceUpdate",
+        "kind": "nested"
+      },
+      {
+        "name": "SignerAdded",
+        "type": "satoru::event::event_emitter::EventEmitter::SignerAdded",
+        "kind": "nested"
+      },
+      {
+        "name": "SignerRemoved",
+        "type": "satoru::event::event_emitter::EventEmitter::SignerRemoved",
+        "kind": "nested"
+      },
+      {
+        "name": "SwapReverted",
+        "type": "satoru::event::event_emitter::EventEmitter::SwapReverted",
+        "kind": "nested"
+      },
+      {
+        "name": "SwapInfo",
+        "type": "satoru::event::event_emitter::EventEmitter::SwapInfo",
+        "kind": "nested"
+      },
+      {
+        "name": "SwapFeesCollected",
+        "type": "satoru::event::event_emitter::EventEmitter::SwapFeesCollected",
+        "kind": "nested"
+      },
+      {
+        "name": "SetHandler",
+        "type": "satoru::event::event_emitter::EventEmitter::SetHandler",
+        "kind": "nested"
+      },
+      {
+        "name": "SetTraderReferralCode",
+        "type": "satoru::event::event_emitter::EventEmitter::SetTraderReferralCode",
+        "kind": "nested"
+      },
+      {
+        "name": "SetTier",
+        "type": "satoru::event::event_emitter::EventEmitter::SetTier",
+        "kind": "nested"
+      },
+      {
+        "name": "SetReferrerTier",
+        "type": "satoru::event::event_emitter::EventEmitter::SetReferrerTier",
+        "kind": "nested"
+      },
+      {
+        "name": "SetReferrerDiscountShare",
+        "type": "satoru::event::event_emitter::EventEmitter::SetReferrerDiscountShare",
+        "kind": "nested"
+      },
+      {
+        "name": "SetRegisterCode",
+        "type": "satoru::event::event_emitter::EventEmitter::SetRegisterCode",
+        "kind": "nested"
+      },
+      {
+        "name": "SetCodeOwner",
+        "type": "satoru::event::event_emitter::EventEmitter::SetCodeOwner",
+        "kind": "nested"
+      },
+      {
+        "name": "GovSetCodeOwner",
+        "type": "satoru::event::event_emitter::EventEmitter::GovSetCodeOwner",
+        "kind": "nested"
+      },
+      {
+        "name": "SetGov",
+        "type": "satoru::event::event_emitter::EventEmitter::SetGov",
+        "kind": "nested"
+      }
+    ]
+  }
+]

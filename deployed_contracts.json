@@ -1,0 +1,74 @@
+[
+  {
+    "name": "DeployingAccount",
+    "address": "0x3ebb4767aae1262f8eb28d9368db5388cfe367f50552a8244123506f0b0bcca"
+  },
+  {
+    "name": "RoleStore",
+    "address": "0x7dae8578722f49d8aba4041f5e5cddd066e1441cc77c5a5ec989ddab6dc8373"
+  },
+  {
+    "name": "DataStore",
+    "address": "0x52f881c95151e0dd1a2b58d9cd19f0cbaee97c1bba5869892e40ff05953210"
+  },
+  {
+    "name": "EventEmitter",
+    "address": "0x793c00319c2fedfbe8fce5f18c28df7b9f29e6d772edba61c31dfabf7111cf1"
+  },
+  {
+    "name": "OracleStore",
+    "address": "0x4be3e7165fff425f437e7523f4fb274892d446abfb141ef3e1b8a45db132c40"
+  },
+  {
+    "name": "Oracle",
+    "address": "0x79f4002d777384a3bff5ec800012b1314946e31c97c51c7f67fc2ad307fa095"
+  },
+  {
+    "name": "OrderVault",
+    "address": "0xed1227f821634c5203cb1d34d3fdeba23ebf1777ce8316f9f83898cb8e6f2f"
+  },
+  {
+    "name": "DepositVault",
+    "address": "0x595e31de0d95dca82abcdb7f744891a43f8b41d5659334c532c497f1139009e"
+  },
+  {
+    "name": "Withdrawal",
+    "address": "0x23179e2a84dfc77234a9fe16e89395e6ad82703044623cb71142587aee0b8d7"
+  },
+  {
+    "name": "SwapHandler",
+    "address": "0x15e3309da0325f86daf40cf1cd713cfac9e53275611b326738563cca3f247ae"
+  },
+  {
+    "name": "ReferralStorage",
+    "address": "0xaf884c020c5d22c000c026338764a0118fafbb52e8eeee4071d8546ebc53a8"
+  },
+  {
+    "name": "OrderHandler",
+    "address": "0x7c44b2157b1cf76d8e53223bcee8913bb88b3854d753c6848e21643894232a9"
+  },
+  {
+    "name": "DepositHandler",
+    "address": "0x3331141c6ea6f2d6119597e589329403c2e168c756ca1c23bcd42da3439a385"
+  },
+  {
+    "name": "WithdrawalHandler",
+    "address": "0x1f191879ff4ef5e229d0cf72c30259dba8586f86663020418a5aa9ad43fa0bf"
+  },
+  {
+    "name": "MarketFactory",
+    "address": "0x18fcfe60af96ee2e3f69b7b9e7bd4ebfb7d54e837ee44190f2e93aff15891e6"
+  },
+  {
+    "name": "Router",
+    "address": "0x7f264887427871427259c3610494bce6d08a35c812941f9594e468aa131fec6"
+  },
+  {
+    "name": "ExchangeRouter",
+    "address": "0x263c953525b6a32334721fa29116218af70521373ef9f73e155167a2083354f"
+  },
+  {
+    "name": "Reader",
+    "address": "0x6c4321073c9ecfc96cad8be7cddc8c834020986b93004051eeca7f78db5eb11"
+  }
+]

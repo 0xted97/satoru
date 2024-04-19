@@ -1,0 +1,181 @@
+[
+  {
+    "type": "impl",
+    "name": "SwapHandler",
+    "interface_name": "satoru::swap::swap_handler::ISwapHandler"
+  },
+  {
+    "type": "struct",
+    "name": "satoru::data::data_store::IDataStoreDispatcher",
+    "members": [
+      {
+        "name": "contract_address",
+        "type": "core::starknet::contract_address::ContractAddress"
+      }
+    ]
+  },
+  {
+    "type": "struct",
+    "name": "satoru::event::event_emitter::IEventEmitterDispatcher",
+    "members": [
+      {
+        "name": "contract_address",
+        "type": "core::starknet::contract_address::ContractAddress"
+      }
+    ]
+  },
+  {
+    "type": "struct",
+    "name": "satoru::oracle::oracle::IOracleDispatcher",
+    "members": [
+      {
+        "name": "contract_address",
+        "type": "core::starknet::contract_address::ContractAddress"
+      }
+    ]
+  },
+  {
+    "type": "struct",
+    "name": "satoru::bank::bank::IBankDispatcher",
+    "members": [
+      {
+        "name": "contract_address",
+        "type": "core::starknet::contract_address::ContractAddress"
+      }
+    ]
+  },
+  {
+    "type": "struct",
+    "name": "core::integer::u256",
+    "members": [
+      {
+        "name": "low",
+        "type": "core::integer::u128"
+      },
+      {
+        "name": "high",
+        "type": "core::integer::u128"
+      }
+    ]
+  },
+  {
+    "type": "struct",
+    "name": "satoru::market::market::Market",
+    "members": [
+      {
+        "name": "market_token",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "index_token",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "long_token",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "short_token",
+        "type": "core::starknet::contract_address::ContractAddress"
+      }
+    ]
+  },
+  {
+    "type": "struct",
+    "name": "core::array::Span::<satoru::market::market::Market>",
+    "members": [
+      {
+        "name": "snapshot",
+        "type": "@core::array::Array::<satoru::market::market::Market>"
+      }
+    ]
+  },
+  {
+    "type": "struct",
+    "name": "satoru::swap::swap_utils::SwapParams",
+    "members": [
+      {
+        "name": "data_store",
+        "type": "satoru::data::data_store::IDataStoreDispatcher"
+      },
+      {
+        "name": "event_emitter",
+        "type": "satoru::event::event_emitter::IEventEmitterDispatcher"
+      },
+      {
+        "name": "oracle",
+        "type": "satoru::oracle::oracle::IOracleDispatcher"
+      },
+      {
+        "name": "bank",
+        "type": "satoru::bank::bank::IBankDispatcher"
+      },
+      {
+        "name": "key",
+        "type": "core::felt252"
+      },
+      {
+        "name": "token_in",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "amount_in",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "swap_path_markets",
+        "type": "core::array::Span::<satoru::market::market::Market>"
+      },
+      {
+        "name": "min_output_amount",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "receiver",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "ui_fee_receiver",
+        "type": "core::starknet::contract_address::ContractAddress"
+      }
+    ]
+  },
+  {
+    "type": "interface",
+    "name": "satoru::swap::swap_handler::ISwapHandler",
+    "items": [
+      {
+        "type": "function",
+        "name": "swap",
+        "inputs": [
+          {
+            "name": "params",
+            "type": "satoru::swap::swap_utils::SwapParams"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "(core::starknet::contract_address::ContractAddress, core::integer::u256)"
+          }
+        ],
+        "state_mutability": "external"
+      }
+    ]
+  },
+  {
+    "type": "constructor",
+    "name": "constructor",
+    "inputs": [
+      {
+        "name": "role_store_address",
+        "type": "core::starknet::contract_address::ContractAddress"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "satoru::swap::swap_handler::SwapHandler::Event",
+    "kind": "enum",
+    "variants": []
+  }
+]
