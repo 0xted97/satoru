@@ -52,7 +52,10 @@ async function deploy() {
     })
     console.log("✅ OrderHandler Deployed:", deployOrderHandlerResponse.deploy.contract_address)
 
-   
+    const index = contracts.findIndex(e => e.name === "OrderHandler")!;
+    contracts[index].address = deployOrderHandlerResponse.deploy.contract_address;
+    
+    fs.writeFileSync(contractsPath, JSON.stringify(contracts, null, 2));
 }
 
 deploy()

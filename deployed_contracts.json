@@ -45,7 +45,7 @@
   },
   {
     "name": "OrderHandler",
-    "address": "0x7c44b2157b1cf76d8e53223bcee8913bb88b3854d753c6848e21643894232a9"
+    "address": "0x6990923566b365210f03673afecd42196e1e9ecfcee75ccfb4934910706235c"
   },
   {
     "name": "DepositHandler",
@@ -65,7 +65,7 @@
   },
   {
     "name": "ExchangeRouter",
-    "address": "0x9bec32933204f9679f124ff03239a02b09798a9ffece3b224b0740ae61a59a"
+    "address": "0x6e7741b34c6203e7f959238135630cb2236db46741ce16a72f95f1f919847be"
   },
   {
     "name": "Reader",

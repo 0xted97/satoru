@@ -316,15 +316,16 @@ fn cancel_order(
     let mut event_data: LogData = Default::default();
     callback_utils::after_order_cancellation(key, order, event_data);
 
-    gas_utils::pay_execution_fee_order(
-        data_store,
-        event_emitter,
-        order_vault,
-        order.execution_fee,
-        starting_gas,
-        keeper,
-        order.account
-    );
+    // TODO: TED Please check, it causes a panic "sub overflow u256"
+    // gas_utils::pay_execution_fee_order(
+    //     data_store,
+    //     event_emitter,
+    //     order_vault,
+    //     order.execution_fee,
+    //     starting_gas,
+    //     keeper,
+    //     order.account
+    // );
 }
 
 /// Freezes an order.
