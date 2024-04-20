@@ -32,7 +32,7 @@
     "address": "0x595e31de0d95dca82abcdb7f744891a43f8b41d5659334c532c497f1139009e"
   },
   {
-    "name": "Withdrawal",
+    "name": "WithdrawalVault",
     "address": "0x23179e2a84dfc77234a9fe16e89395e6ad82703044623cb71142587aee0b8d7"
   },
   {
@@ -65,7 +65,7 @@
   },
   {
     "name": "ExchangeRouter",
-    "address": "0x263c953525b6a32334721fa29116218af70521373ef9f73e155167a2083354f"
+    "address": "0x9bec32933204f9679f124ff03239a02b09798a9ffece3b224b0740ae61a59a"
   },
   {
     "name": "Reader",

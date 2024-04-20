@@ -149,7 +149,7 @@ async function deploy() {
         constructorCalldata: withdrawalVaultConstructor,
     })
     console.log("✅ Withdrawal Deployed:", deployWithdrawalVaultResponse.deploy.contract_address)
-    deployedContracts.push({ name: "Withdrawal", address: deployWithdrawalVaultResponse.deploy.contract_address });
+    deployedContracts.push({ name: "WithdrawalVault", address: deployWithdrawalVaultResponse.deploy.contract_address });
 
     console.log("\n🚀 Deploying SwapHandler...")
     const compiledSwapHandlerCasm = json.parse(fs.readFileSync("./target/dev/satoru_SwapHandler.compiled_contract_class.json").toString("ascii"))

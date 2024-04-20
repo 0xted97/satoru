@@ -10,6 +10,7 @@
     "deploy": "ts-node ./scripts/app/deployApp.ts",
     "deploy-single": "ts-node ./scripts/app/deploySingle.ts",
     "deploy-order": "ts-node ./scripts/app/deployOrderHandler.ts",
+    "deploy-exchange-router": "ts-node ./scripts/app/deployExchangeRouter.ts",
     "grant-roles": "ts-node ./scripts/app/grant-roles.ts",
     "get-abis": "ts-node ./scripts/app/getAbis.ts"
   }
