@@ -44,19 +44,19 @@ fn execute_order(params: ExecuteOrderParams) {
 
     '5. Execute Order'.print();
 
-    let balance_ETH_start = IERC20Dispatcher { contract_address: contract_address_const::<'ETH'>() }
-        .balance_of(contract_address_const::<'caller'>());
+    // let balance_ETH_start = IERC20Dispatcher { contract_address: contract_address_const::<'ETH'>() }
+    //     .balance_of(contract_address_const::<'caller'>());
 
-    let balance_USDC_start = IERC20Dispatcher {
-        contract_address: contract_address_const::<'USDC'>()
-    }
-        .balance_of(contract_address_const::<'caller'>());
+    // let balance_USDC_start = IERC20Dispatcher {
+    //     contract_address: contract_address_const::<'USDC'>()
+    // }
+    //     .balance_of(contract_address_const::<'caller'>());
 
-    '5. eth start create order'.print();
-    balance_ETH_start.print();
+    // '5. eth start create order'.print();
+    // balance_ETH_start.print();
 
-    '5. usdc start create order'.print();
-    balance_USDC_start.print();
+    // '5. usdc start create order'.print();
+    // balance_USDC_start.print();
 
     base_order_utils::validate_non_empty_order(@params.order);
 
@@ -88,17 +88,17 @@ fn execute_order(params: ExecuteOrderParams) {
     // it may be possible to invoke external contracts before the validations
     // are called
 
-    let balance_ETH_after = IERC20Dispatcher { contract_address: contract_address_const::<'ETH'>() }
-        .balance_of(contract_address_const::<'caller'>());
-    'balance_ETH_after'.print();
-    balance_ETH_after.print();
+    // let balance_ETH_after = IERC20Dispatcher { contract_address: contract_address_const::<'ETH'>() }
+    //     .balance_of(contract_address_const::<'caller'>());
+    // 'balance_ETH_after'.print();
+    // balance_ETH_after.print();
 
-    let balance_USDC_after = IERC20Dispatcher {
-        contract_address: contract_address_const::<'USDC'>()
-    }
-        .balance_of(contract_address_const::<'caller'>());
-    'balance_USDC_after'.print();
-    balance_USDC_after.print();
+    // let balance_USDC_after = IERC20Dispatcher {
+    //     contract_address: contract_address_const::<'USDC'>()
+    // }
+    //     .balance_of(contract_address_const::<'caller'>());
+    // 'balance_USDC_after'.print();
+    // balance_USDC_after.print();
 
     if (params.market.market_token != contract_address_const::<0>()) {
         market_utils::validate_market_token_balance_check(

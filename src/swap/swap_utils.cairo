@@ -113,19 +113,19 @@ fn swap(params: @SwapParams) -> (ContractAddress, u256) {
     '2. Swap function'.print();
     // let balance_ETH_loop = IERC20Dispatcher { contract_address: contract_address_const::<'ETH'>() }
     //     .balance_of(contract_address_const::<'caller'>());
-    let balance_ETH_start = IERC20Dispatcher { contract_address: contract_address_const::<'ETH'>() }
-        .balance_of(contract_address_const::<'caller'>());
+    // let balance_ETH_start = IERC20Dispatcher { contract_address: contract_address_const::<'ETH'>() }
+    //     .balance_of(contract_address_const::<'caller'>());
 
-    let balance_USDC_start = IERC20Dispatcher {
-        contract_address: contract_address_const::<'USDC'>()
-    }
-        .balance_of(contract_address_const::<'caller'>());
+    // let balance_USDC_start = IERC20Dispatcher {
+    //     contract_address: contract_address_const::<'USDC'>()
+    // }
+    //     .balance_of(contract_address_const::<'caller'>());
 
-    '2. balance eth start swap'.print();
-    balance_ETH_start.print();
+    // '2. balance eth start swap'.print();
+    // balance_ETH_start.print();
 
-    '2. balance usdc start swap'.print();
-    balance_USDC_start.print();
+    // '2. balance usdc start swap'.print();
+    // balance_USDC_start.print();
 
     let swap_path_array_length = (*params.swap_path_markets).len();
     if (swap_path_array_length == 0) {
@@ -204,17 +204,17 @@ fn swap(params: @SwapParams) -> (ContractAddress, u256) {
         SwapError::INSUFFICIENT_OUTPUT_AMOUNT(output_amount, *params.min_output_amount);
     }
 
-    let balance_ETH = IERC20Dispatcher { contract_address: contract_address_const::<'ETH'>() }
-        .balance_of(contract_address_const::<'caller'>());
+    // let balance_ETH = IERC20Dispatcher { contract_address: contract_address_const::<'ETH'>() }
+    //     .balance_of(contract_address_const::<'caller'>());
 
-    let balance_USDC = IERC20Dispatcher { contract_address: contract_address_const::<'USDC'>() }
-        .balance_of(contract_address_const::<'caller'>());
+    // let balance_USDC = IERC20Dispatcher { contract_address: contract_address_const::<'USDC'>() }
+    //     .balance_of(contract_address_const::<'caller'>());
 
-    'Eth balance: '.print();
-    balance_ETH.print();
+    // 'Eth balance: '.print();
+    // balance_ETH.print();
 
-    'Usdc balance: '.print();
-    balance_USDC.print();
+    // 'Usdc balance: '.print();
+    // balance_USDC.print();
 
     (token_out, output_amount)
 }
