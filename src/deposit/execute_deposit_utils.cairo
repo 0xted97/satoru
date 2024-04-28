@@ -122,6 +122,7 @@ fn execute_deposit(params: ExecuteDepositParams) {
     );
 
     let market = market_utils::get_enabled_market(params.data_store, deposit.market);
+    
     let prices = market_utils::get_market_prices(params.oracle, market);
 
     // deposits should improve the pool state but it should be checked if

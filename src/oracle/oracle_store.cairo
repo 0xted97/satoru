@@ -148,8 +148,9 @@ mod OracleStore {
         }
 
         fn get_signer(self: @ContractState, index: usize) -> ContractAddress {
-            // self.signers.read().get(index).expect('failed to get signer')
-            contract_address_const::<'signer'>() // TODO
+            // NOTE: Ted, disable get index
+            self.signers.read().get(index).expect('failed to get signer')
+            // contract_address_const::<'signer'>() // TODO
         }
 
         fn get_signers(self: @ContractState, start: u256, end: u256) -> Array<ContractAddress> {
